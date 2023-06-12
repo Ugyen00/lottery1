@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The One Lottery</title>
     <link rel="stylesheet" href="/style/all.min.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/astyle.css">
 </head>
 <body>
     <div class="container">
@@ -18,9 +18,9 @@
                 </a>
               </div>
             <ul class="navbar">
-                <li><a href="result.html" class="active">Lottery</a></li>
-                <li><a href="login.html">Admin</a></li>
-                <li onclick="logout()">Logout</li>
+                <li><a href="login.html" class="active">Admin</a></li>
+                <li><a href="login.html">Profile</a></li>
+                <li onclick="logout()" style="color: aliceblue; font-weight: bold;">Logout</li>
             </ul>
         </header>
         <div class="ccontainer">
@@ -48,13 +48,11 @@
             </div>
         </div>
         <div class="fcontainer">
-          <h1 class="form-title">Edit Lottery</h1>
           <form>
             <div class="main-user-info">
                 <div class="user-input-box">
                     <label for="tikID">Ticket ID :</label>
-                    <input type="number" id="tid" name="tikID" placeholder="Ex. 20120001" readonly>
-                    <button id="button-gen" type="button" onclick="GetNo()">Get Your No</button>
+                    <input type="number" id="tid" name="tikID" placeholder="Ex. 20120001">
                 </div>
                 <div class="user-input-tbox">
                     <label for="fname">First Name : </label>
@@ -76,7 +74,8 @@
         </div>
         </div>
     </div>
-        <div class="rcontainer">
+    </div>
+    <div class="rcontainer">
             <h3 class="table-title">Lottery Registered</h3>
             <table id="TicketList">
                 <tr class="table-text">
@@ -84,13 +83,12 @@
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Phone</th>
-                    <th >Action</th>
+                    <th>Action</th>
                     <th></th>
                 </tr>
             </table>
         </div>
-    </div>
-    <!-- <footer>
+    <footer>
         <div class="footer-body">
             <ul>
                 <h3 class="footer-title">Get In Touch</h3>
@@ -104,7 +102,7 @@
     </footer>
     <div class="footer-bottom">
         <p>Copyright &copy; All Right Reserved</p>
-    </div> -->
+    </div>
     <script src="/js/ticket.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/auth.js"></script>
