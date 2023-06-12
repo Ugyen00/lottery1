@@ -139,7 +139,7 @@ function update(tid) {
     headers: {"Content-type": "application/json; charset=UTF-8"}
   }).then (res => {
     if (res.ok) {
-      selectedRow.cells[0].innerHTML = newData.tkid;
+      selectedRow.cells[0].innerHTML = newData.tikid;
       selectedRow.cells[1].innerHTML = newData.fname;
       selectedRow.cells[2].innerHTML = newData.lname;
       selectedRow.cells[3].innerHTML = newData.phone;
