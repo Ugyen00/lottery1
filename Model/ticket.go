@@ -1,6 +1,8 @@
 package model
 
 import (
+	"fmt"
+
 	postgres "main.go/dataStore"
 )
 
@@ -39,6 +41,7 @@ const queryUpdateUser = "UPDATE ticket SET tikid=$1, firstname=$2, lastname=$3, 
 func (s *Ticket) Update(oldID int64) error {
 	_, err := postgres.Db.Exec(queryUpdateUser,
 		s.TikId, s.FirstName, s.LastName, s.Phone, oldID)
+		fmt.Println("dkdkdmoel",err)
 	return err
 }
 

@@ -119,10 +119,11 @@ func UpdateTik(w http.ResponseWriter, r *http.Request) {
 	// }
 	fmt.Println("hi")
 	old_tik := mux.Vars(r)["tid"]
-	fmt.Println(old_tik)
+	fmt.Println(old_tik,"kkkkkkkk")
 	old_tikid, idErr := getUserId(old_tik)
 	if idErr != nil {
 		httpResp.RespondWithError(w, http.StatusBadRequest, idErr.Error())
+		fmt.Println("1",idErr)
 		return
 	}
 
@@ -130,10 +131,11 @@ func UpdateTik(w http.ResponseWriter, r *http.Request) {
 	decoder := json.NewDecoder(r.Body)
 	if err := decoder.Decode(&tik); err != nil {
 		httpResp.RespondWithError(w, http.StatusBadRequest, "invalid json body")
+		fmt.Println("2",err)
 		return
 	}
 	defer r.Body.Close()
-
+	fmt.Println(tik.TikId,"hiiiiii")
 	err := tik.Update(old_tikid)
 	if err != nil {
 		httpResp.RespondWithError(w, http.StatusInternalServerError, err.Error())
@@ -141,4 +143,5 @@ func UpdateTik(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	httpResp.RespondWithJSON(w, http.StatusOK, tik)
+	fmt.Println("success")
 }

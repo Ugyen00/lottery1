@@ -123,7 +123,7 @@ function updateTicket(r) {
 }
 function getFormData(){
   var data = {
-    tkid : parseInt(document.getElementById("tid").value),
+    tikid : parseInt(document.getElementById("tid").value),
     fname : document.getElementById("fname").value,
     lname : document.getElementById("lname").value,
     phone : parseInt(document.getElementById("phone").value)
@@ -132,7 +132,7 @@ function getFormData(){
 }
 function update(tid) {
   var newData = getFormData()
-  console.log(tid)
+  console.log(tid,"hiiii")
   fetch('/ticket/'+tid, {
     method: "PUT",
     body: JSON.stringify(newData),
@@ -151,7 +151,11 @@ function update(tid) {
       resetform();
     }else {
       alert("Server: Update request error.")
+      throw new Error(res.statusText)
     }
+  })
+  .catch(e =>{
+    alert(e)
   })
 }
 
