@@ -191,42 +191,9 @@ function update(tid) {
 // }, 1000);
 
 
-// let countDownDate = new Date("June 13, 2023 04:50:00").getTime();
-// let container = document.querySelectorAll(".tcontainer");
-// let lotteryNumbers = Array.from(document.querySelectorAll("#TicketList tr:not(.table-text) td:nth-child(1)")).map(td => td.innerHTML);
-
-// let countdownInterval = setInterval(function () {
-//     let now = new Date().getTime();
-//     let distance = countDownDate - now;
-//     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-//     let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-//     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-//     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-//     container[0].childNodes[1].innerHTML = days;
-//     container[0].childNodes[3].innerHTML = 'days';
-//     container[1].childNodes[1].innerHTML = hours;
-//     container[1].childNodes[3].innerHTML = 'hours';
-//     container[2].childNodes[1].innerHTML = minutes;
-//     container[2].childNodes[3].innerHTML = 'minutes';
-//     container[3].childNodes[1].innerHTML = seconds;
-//     container[3].childNodes[3].innerHTML = 'seconds';
-
-//     if (distance <= 0) {
-//         clearInterval(countdownInterval); // Stop the interval
-//         let randomIndex = Math.floor(Math.random() * lotteryNumbers.length);
-//         let win = lotteryNumbers[randomIndex];
-//         alert("Countdown has ended! Winner is Lottery Number: " + win); // Display an alert
-//     }
-// }, 1000);
-
-let countDownDate = new Date("June 13, 2023 05:43:00").getTime();
+let countDownDate = new Date("June 13, 2023 04:50:00").getTime();
 let container = document.querySelectorAll(".tcontainer");
-let ticketElements = document.querySelectorAll("#TicketList td:nth-child(1)");
-
-// Extract ticket IDs and store them in an array
-let ticketIDs = Array.from(ticketElements).map(td => td.innerHTML.trim());
-console.log(ticketIDs)
+let lotteryNumbers = Array.from(document.querySelectorAll("#TicketList tr:not(.table-text) td:nth-child(1)")).map(td => td.innerHTML);
 
 let countdownInterval = setInterval(function () {
     let now = new Date().getTime();
@@ -247,20 +214,53 @@ let countdownInterval = setInterval(function () {
 
     if (distance <= 0) {
         clearInterval(countdownInterval); // Stop the interval
-
-        // Generate a random index to select a ticket ID
-        let randomIndex = Math.floor(Math.random() * ticketIDs.length);
-        
-        // Retrieve the ticket ID using the random index
-        let ticketID = ticketIDs[randomIndex];
-
-        alert("Countdown has ended! Winner is Ticket ID: " + ticketID); // Display an alert
-
-        // Extract all ticket IDs
-        // let allTicketIDs = ticketIDs.join(", ");
-        console.log("All Ticket IDs:", ticketIDs);
+        let randomIndex = Math.floor(Math.random() * lotteryNumbers.length);
+        let win = lotteryNumbers[randomIndex];
+        alert("Countdown has ended! Winner is Lottery Number: " + win); // Display an alert
     }
 }, 1000);
+
+// let countDownDate = new Date("June 13, 2023 05:43:00").getTime();
+// let container = document.querySelectorAll(".tcontainer");
+// let ticketElements = document.querySelectorAll("#TicketList td:nth-child(1)");
+
+// // Extract ticket IDs and store them in an array
+// let ticketIDs = Array.from(ticketElements).map(td => td.innerHTML.trim());
+// console.log(ticketIDs)
+
+// let countdownInterval = setInterval(function () {
+//     let now = new Date().getTime();
+//     let distance = countDownDate - now;
+//     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//     let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+//     container[0].childNodes[1].innerHTML = days;
+//     container[0].childNodes[3].innerHTML = 'days';
+//     container[1].childNodes[1].innerHTML = hours;
+//     container[1].childNodes[3].innerHTML = 'hours';
+//     container[2].childNodes[1].innerHTML = minutes;
+//     container[2].childNodes[3].innerHTML = 'minutes';
+//     container[3].childNodes[1].innerHTML = seconds;
+//     container[3].childNodes[3].innerHTML = 'seconds';
+
+//     if (distance <= 0) {
+//         clearInterval(countdownInterval); // Stop the interval
+
+//         // Generate a random index to select a ticket ID
+//         let randomIndex = Math.floor(Math.random() * ticketIDs.length);
+        
+//         // Retrieve the ticket ID using the random index
+//         let ticketID = ticketIDs[randomIndex];
+
+//         alert("Countdown has ended! Winner is Ticket ID: " + ticketID); // Display an alert
+
+//         // Extract all ticket IDs
+//         // let allTicketIDs = ticketIDs.join(", ");
+//         console.log("All Ticket IDs:", ticketIDs);
+//     }
+// }, 1000);
 
 
 // let container = document.querySelectorAll(".tcontainer");
