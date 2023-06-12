@@ -222,10 +222,10 @@ ul.navbar li a:hover:not(.active){
 .rcontainer{
     width: 100%;
     max-width: 650px;
-    /* background: rgba(255, 255, 255, 0.3); */
+    background: rgba(255, 255, 255, 0.3);
     margin: 30px 450px;
     border-radius: 10px;
-    /* box-shadow: inset -2px 2px 2px white; */
+    box-shadow: inset -2px 2px 2px white;
 }
 .table-title{
     font-size: 26px;

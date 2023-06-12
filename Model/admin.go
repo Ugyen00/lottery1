@@ -1,8 +1,6 @@
 package model
 
 import (
-	"fmt"
-
 	postgres "main.go/dataStore"
 )
 
@@ -23,39 +21,39 @@ func (a *Admin)Check(email string)error{
 	return postgres.Db.QueryRow(query,email).Scan(&a.FirstName,&a.LastName,&a.Email,&a.Password)
 }
 
-const queryDeleteAdmin = "DELETE FROM admin WHERE email=$1;"
+// const queryDeleteAdmin = "DELETE FROM admin WHERE email=$1;"
 
-func (a *Admin) Delete() error {
-	if _, err := postgres.Db.Exec(queryDeleteUser, a.Email); err != nil {
-		return err
-	}
-	return nil
-}
+// func (a *Admin) Delete() error {
+// 	if _, err := postgres.Db.Exec(queryDeleteUser, a.Email); err != nil {
+// 		return err
+// 	}
+// 	return nil
+// }
 
-const queryUpdateAdmin = "UPDATE admin SET firstname=$1, lastname=$2, email=$3 WHERE Email=$4;"
+// const queryUpdateAdmin = "UPDATE admin SET firstname=$1, lastname=$2, email=$3 WHERE Email=$4;"
 
-func (a *Admin) Update(oldID int64) error {
-	_, err := postgres.Db.Exec(queryUpdateUser,
-		a.FirstName, a.LastName, a.Email, oldID)
-		fmt.Println("dkdkdmoel",err)
-	return err
-}
+// func (a *Admin) Update(oldID int64) error {
+// 	_, err := postgres.Db.Exec(queryUpdateUser,
+// 		a.FirstName, a.LastName, a.Email, oldID)
+// 		fmt.Println("dkdkdmoel",err)
+// 	return err
+// }
 
-func GetAllAdmin() ([]Admin, error) {
-	rows, getErr := postgres.Db.Query("SELECT * from admin;")
-	if getErr != nil {
-		return nil, getErr
-	}
-	Admins := []Admin{}
+// func GetAllAdmin() ([]Admin, error) {
+// 	rows, getErr := postgres.Db.Query("SELECT * from admin;")
+// 	if getErr != nil {
+// 		return nil, getErr
+// 	}
+// 	Admins := []Admin{}
 
-	for rows.Next() {
-		var a Admin
-		dbErr := rows.Scan(&a.FirstName, &a.LastName, &a.Email)
-		if dbErr != nil {
-			return nil, dbErr
-		}
-		Admins = append(Admins, a)
-	}
-	rows.Close()
-	return Admins, nil
-}
+// 	for rows.Next() {
+// 		var a Admin
+// 		dbErr := rows.Scan(&a.FirstName, &a.LastName, &a.Email)
+// 		if dbErr != nil {
+// 			return nil, dbErr
+// 		}
+// 		Admins = append(Admins, a)
+// 	}
+// 	rows.Close()
+// 	return Admins, nil
+// }
