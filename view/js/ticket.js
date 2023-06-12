@@ -80,6 +80,7 @@ function showTickets(data) {
 }
 
 window.onload = function(data) {
+  alert("here..")
     fetch('/tickets')
         .then(response => response.text())
         .then(data => showTickets(data));

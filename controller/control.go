@@ -14,9 +14,9 @@ import (
 )
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
-	if !VerifyCookie(w, r) {
-		return
-	}
+	// if !VerifyCookie(w, r) {
+	// 	return
+	// }
 	p := mux.Vars(r)
 	ticket := p["ticket"]
 	_, err := w.Write([]byte("hellow world" + ticket))
@@ -26,9 +26,9 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func BuyTicket(w http.ResponseWriter, r *http.Request) {
-	if !VerifyCookie(w, r) {
-		return
-	}
+	// if !VerifyCookie(w, r) {
+	// 	return
+	// }
 	var tik model.Ticket
 	decoder := json.NewDecoder(r.Body)
 
@@ -47,9 +47,9 @@ func BuyTicket(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetTik(w http.ResponseWriter, r *http.Request) {
-	if !VerifyCookie(w, r) {
-		return
-	}
+	// if !VerifyCookie(w, r) {
+	// 	return
+	// }
 	tid := mux.Vars(r)["tid"]
 	tikid, idErr := getUserId(tid)
 
@@ -81,9 +81,9 @@ func getUserId(userIdParam string) (int64, error) {
 }
 
 func DeleteTik(w http.ResponseWriter, r *http.Request) {
-	if !VerifyCookie(w, r) {
-		return
-	}
+	// if !VerifyCookie(w, r) {
+	// 	return
+	// }
 	tid := mux.Vars(r)["tid"]
 	tikId, idErr := getUserId(tid)
 	if idErr != nil {
@@ -99,21 +99,24 @@ func DeleteTik(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetAllTiks(w http.ResponseWriter, r *http.Request) {
-	if !VerifyCookie(w, r) {
-		return
-	}
+	// if !VerifyCookie(w, r) {
+	// 	return
+	// }
+	fmt.Println("Here1")
 	tickets, getErr := model.GetAllTickets()
 	if getErr != nil {
 		httpResp.RespondWithError(w, http.StatusBadRequest, getErr.Error())
+		fmt.Println("error",getErr)
 		return
 	}
 	httpResp.RespondWithJSON(w, http.StatusOK, tickets)
+	fmt.Println("success",tickets)
 }
 
 func UpdateTik(w http.ResponseWriter, r *http.Request) {
-	if !VerifyCookie(w, r) {
-		return
-	}
+	// if !VerifyCookie(w, r) {
+	// 	return
+	// }
 	fmt.Println("hi")
 	old_tik := mux.Vars(r)["tid"]
 	fmt.Println(old_tik)
