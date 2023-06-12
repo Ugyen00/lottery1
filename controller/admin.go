@@ -23,7 +23,7 @@ func RegisterHandler(w http.ResponseWriter,r *http.Request){
 	}
 	getErr := admin.CreateAdmin()
 	if getErr != nil{
-		fmt.Println("error in inserting the data")
+		fmt.Println("error in inserting the data",getErr)
 		httpResp.RespondWithError(w,http.StatusBadRequest,"error in inserting ")
 		return 
 	}
@@ -67,7 +67,7 @@ func LoginHandler(w http.ResponseWriter, r *http.Request){
 	//set cookie and send back to client
 	http.SetCookie(w, &cookie)
 	httpResp.RespondWithJSON(w,http.StatusOK,map[string]string{"message":"successful"})
-	fmt.Println("successful")
+	fmt.Println("successful login")
 }
 
 func LogoutHandler(w http.ResponseWriter, r *http.Request){

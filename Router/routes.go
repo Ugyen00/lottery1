@@ -24,5 +24,5 @@ func InitRoutes() {
 	router.PathPrefix("/").Handler(fhandler)
 
 	log.Println("Application Running on prot 3003...")
-	log.Fatal(http.ListenAndServe(":3003", router))
+	log.Fatal(http.ListenAndServe(":3005", router))
 }

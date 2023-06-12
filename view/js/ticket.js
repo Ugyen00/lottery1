@@ -63,8 +63,11 @@ function newRow(ticket) {
     td[1].innerHTML = ticket.fname;
     td[2].innerHTML = ticket.lname;
     td[3].innerHTML = ticket.phone;
-    td[4].innerHTML = '<input type="button" onclick="deleteTicket(this)"value="Delete" id="button-1">';
-    td[5].innerHTML = '<input type="button" onclick="updateTicket(this)"value="Edit" id="button-2">';
+    if (document.cookie != ""){
+      td[4].innerHTML = '<input type="button" onclick="deleteTicket(this)"value="Delete" id="button-1">';
+      td[5].innerHTML = '<input type="button" onclick="updateTicket(this)"value="Edit" id="button-2">';
+    }
+    
 }
 
 function showTicket(data) {

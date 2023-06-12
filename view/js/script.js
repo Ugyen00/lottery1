@@ -165,7 +165,7 @@ function login(){
     })
     .then(resp => {
         if (resp.ok){
-            window.location.href = "login.html"
+            window.location.href = "admin.html"
         }else if (resp.status == 401){
             alert("invalid login, try again")
         }else{
