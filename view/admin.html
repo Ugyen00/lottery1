@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The One Lottery</title>
+    <link rel="stylesheet" href="/style/all.min.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="home.html" style="display: flex; align-items: center; text-decoration: none; color: rgb(255, 255, 255);">
+                  <i class="fas fa-dice-d6" style="color: #ffd43b; margin-right: 5px;"></i>
+                  <p style="margin: 5;">The One Lottery</p>
+                </a>
+              </div>
+            <ul class="navbar">
+                <li><a href="result.html" class="active">Lottery</a></li>
+                <li><a href="login.html">Admin</a></li>
+            </ul>
+        </header>
+        <div class="ccontainer">
+            <h3 class="table-title">Lottery Result will be in...</h3>
+            </table>
+        </div>
+        <div class="flex">
+            <div class="timer flex">
+                <div class="tcontainer">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="tcontainer">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="tcontainer">
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="tcontainer">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="fcontainer">
+          <h1 class="form-title">Edit Lottery</h1>
+          <form>
+            <div class="main-user-info">
+                <div class="user-input-box">
+                    <label for="tikID">Ticket ID :</label>
+                    <input type="number" id="tid" name="tikID" placeholder="Ex. 20120001" readonly>
+                    <button id="button-gen" type="button" onclick="GetNo()">Get Your No</button>
+                </div>
+                <div class="user-input-tbox">
+                    <label for="fname">First Name : </label>
+                    <input type="text" id="fname" name="firstname" >
+                </div>
+                <div class="user-input-box">
+                    <label for="lname">Last Name : </label>
+                    <input type="text" id="lname" name="lastname">
+                </div>
+                <div class="user-input-box">
+                    <label for="phone">PhoneNo : </label>
+                    <input type="number" id="phone" name="phone">
+                </div>
+            </div>
+            <div class="form-submit-btn">
+                <button id="button-add" type="button" onclick="buyTicket()">Edit Lottery Ticket</button>
+              </div>
+          </form>
+        </div>
+        </div>
+    </div>
+        <div class="rcontainer">
+            <h3 class="table-title">Lottery Registered</h3>
+            <table id="TicketList">
+                <tr class="table-text">
+                    <th>Lottery Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th >Action</th>
+                    <th></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- <footer>
+        <div class="footer-body">
+            <ul>
+                <h3 class="footer-title">Get In Touch</h3>
+                <li><a href="#"><i class="fab fa-facebook"></i>Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                    <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                    <a href="#"><i class="fab fa-linkedin"></i>Linkedin</a>  
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>Copyright &copy; All Right Reserved</p>
+    </div> -->
+    <script src="/js/ticket.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="js/auth.js"></script>
+
+</body>
+</html>

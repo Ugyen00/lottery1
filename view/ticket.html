@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The One Lottery</title>
+    <link rel="stylesheet" href="/style/all.min.css">
+    <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: rgb(255, 255, 255);">
+                  <i class="fas fa-dice-d6" style="color: #ffd43b; margin-right: 5px;"></i>
+                  <p style="margin: 5;">The One Lottery</p>
+                </a>
+              </div>
+            <ul class="navbar">
+                <li><a href="ticket.html" class="active">Lottery</a></li>
+                <li><a href="result.html">Result</a></li>
+                <li><a href="login.html">Admin</a></li>
+            </ul>
+        </header>
+        <div class="fcontainer">
+          <h1 class="form-title">Buy Lottery</h1>
+          <form>
+            <div class="main-user-info">
+                <div class="user-input-box">
+                    <label for="tikID">Ticket ID :</label>
+                    <input type="number" id="tid" name="tikID" placeholder="Ex. 201">
+                    <button id="button-gen" type="button" onclick="GetNo()">Get Your No</button>
+                </div>
+                <div class="user-input-tbox">
+                    <label for="fname">First Name : </label>
+                    <input type="text" id="fname" name="firstname" >
+                </div>
+                <div class="user-input-box">
+                    <label for="lname">Last Name : </label>
+                    <input type="text" id="lname" name="lastname">
+                </div>
+                <div class="user-input-box">
+                    <label for="phone">PhoneNo : </label>
+                    <input type="number" id="phone" name="phone">
+                </div>
+            </div>
+            <div class="form-submit-btn">
+                <button id="button-add" type="button" onclick="buyTicket()">Book Your Lottery Ticket</button>
+              </div>
+          </form>
+        </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-body">
+            <ul>
+                <h3 class="footer-title">Get In Touch</h3>
+                <li><a href="#"><i class="fab fa-facebook"></i>Facebook</a>
+                    <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+                    <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                    <a href="#"><i class="fab fa-linkedin"></i>Linkedin</a>  
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>Copyright &copy; All Right Reserved</p>
+    </div>
+    <script src="/js/ticket.js"></script>
+    <script src="js/logout.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/base1.css">
+    <title>Student</title>
+</head>
+<body>
+    <div class="header">
+        <ul id = "menu">
+            <li style = "background-color: rgb(14, 14, 14)" ><a href="ticket.html">Lottery</a></li>
+            <li><a href="result.html">Result</a></li>
+            <li id = "Logout"><a href="">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="container1">
+        <h3>Buy Lottery</h3>
+        <div>
+            I have changed the form to div to prevent form submission-->
+            <!-- <div class="row">
+                <div class="col-1">
+                    <label for="tikID">Ticket ID :</label>
+                </div>
+                <div class="col-2">
+                    <input type="number" id="tid" name="tikID" placeholder="Ex. 20120001" readonly>
+                </div>
+            </div>
+            <div class="row">
+                <button id="button-add" onclick="GetNo()">Get Your No</button>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="fname">First Name : </label>
+                </div>
+                <div class="col-2">
+                    <input type="text" id="fname" name="firstname" >
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="lname">Last Name : </label>
+                </div>
+                <div class="col-2">
+                    <input type="text" id="lname" name="lastname">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="phone">PhoneNo : </label>
+                </div>
+                <div class="col-2">
+                    <input type="number" id="phone" name="phone">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button id="button-add" onclick="buyTicket()">Buy</button>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/ticket.js"></script>
+</body>
+</html> --> 
