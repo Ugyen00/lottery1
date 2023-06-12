@@ -81,14 +81,6 @@ ul.navbar li a:hover:not(.active){
     margin-right: 10px;
 }
 
-.ccontainer{
-    width: 100%;
-    max-width: 650px;
-    padding: 30px;
-    margin: 20px 450px;
-    border-radius: 10px;
-}
-
 .fcontainer{
     width: 100%;
     max-width: 650px;
@@ -139,7 +131,7 @@ ul.navbar li a:hover:not(.active){
     border-radius: 7px;
     outline: none;
     border: 2px solid rgb(157, 0, 255);
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     padding: 0 10px;
 }
 
@@ -194,7 +186,7 @@ ul.navbar li a:hover:not(.active){
 
 
 .form-submit-btn{
-    display: flex;
+display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -219,20 +211,33 @@ ul.navbar li a:hover:not(.active){
     color: rgb(0, 0, 0);
 }
 
+
 .rcontainer{
     width: 100%;
     max-width: 650px;
     /* background: rgba(255, 255, 255, 0.3); */
-    margin: 30px 450px;
+    margin: 30px 0px;
     border-radius: 10px;
     /* box-shadow: inset -2px 2px 2px white; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
 }
-.table-title{
+/* .table-title{
     font-size: 26px;
     text-align: center;
     color: rgb(255, 255, 255);
     text-shadow: 2px 2px 2px black;
     border-bottom: solid 1px white;
+} */
+
+.table-textT{
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    /* text-shadow: 2px 2px 2px black; */
+    /* border-bottom: solid 1px white; */
+    text-align: center;
+    border-bottom: 1px solid black;
 }
 
 .table-text{
@@ -241,6 +246,7 @@ ul.navbar li a:hover:not(.active){
     text-shadow: 2px 2px 2px black;
     border-bottom: solid 1px white;
     text-align: center;
+    padding: 50px;
 }
 
 #TicketList {
@@ -250,132 +256,57 @@ ul.navbar li a:hover:not(.active){
     justify-content: center;
     border-spacing: 15px;
 }
-  
-#button-1 {
+
+#TicketList .table-textT {
+    font-size: 24px;
+    color: #282828;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 20px;
+}
+
+.button-1 {
     background-color: rgba(225, 60, 60, 0.716);
     padding-right: 5px;
     padding-left: 5px;
     display: block;
-    width: 60px;
-    height: 20px;
+    width: 90px;
+    height: 30px;
     margin-top: 5px;
-    font-size: 10px;
+    font-size: 14px;
     border-radius: 5px;
     color: rgba(255, 252, 252, 0.671);
 }
 
-#button-1:hover{
+.button-1:hover{
     background-color: rgb(225, 60, 60);
     color: rgb(0, 0, 0);
     border-color: #000;
 }
 
-#button-2 {
+.button-2 {
     background-color: rgba(238, 241, 44, 0.458);
     padding-right: 5px;
     padding-left: 5px;
     display: block;
-    width: 60px;
-    height: 20px;
+    width: 90px;
+    height: 30px;
     margin-top: 5px;
-    font-size: 10px;
+    font-size: 14px;
     border-radius: 5px;
     color: rgba(255, 252, 252, 0.671);
 }
-#button-2:hover{
+.button-2:hover{
     background: #fcc12b;
     color: rgb(0, 0, 0);
     padding-right: 5px;
     padding-left: 5px;
     border-color: #000;
-}
-
-/* Content desc starts here */
-.content-wrapper{
-    width: 80%;
-    min-height: 80vh;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-}
-/* .content-desc{
-
-} */
-
-.content-desc h1{
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-.content-desc p{
-    width: 550px;
-    font-size: 1.3rem;
-    line-height: 2rem;
-    margin-bottom: 10px;
-}
-.content-desc span{
-    color: #FEC53A;
-}
-#btn2{
-    width: 350px;
-    height: 10vh;
-    padding-left: 20px;
-    outline: none;
-    border: none;
-    background: #FEC53A;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 15px;
-    clip-path: polygon(0 0, 74% 0, 100% 100%, 0% 100%);
-    border-radius: 20px;
-    text-align: left;
-}
-.rakuto{
-    width: 400px;
-    height: 400px;
-    /* background: linear-gradient(rgba(38, 2, 39, 0.849),rgb(204, 115, 14)); */
-    background-size: cover;
-    background-position: center;
-    position: relative;
-}
-.rakuto::before{
-    content: '';
-    width: 160px;
-    height: 160px;
-    /* background: url(../images/cube.png); */
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    top: 10px;
-    left: 200px;
-}
-.rakuto::after{
-    content: '';
-    width: 600px;
-    height: 600px;
-    background: url(../images/icon.png);
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    bottom: -100px;
-    left: -150px;
-}
-.logo-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px 0;
-}
-.logo-section .fas{
-    font-size: 6rem;
-    color: #FEC53A;
-}
-.logo-section h1{
-    width: 250px;
-    font-size: 2rem;
-    color: #FEC53A;
-    margin-left: 10px;
 }
 
 

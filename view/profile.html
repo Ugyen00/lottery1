@@ -6,30 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The One Lottery</title>
     <link rel="stylesheet" href="/style/all.min.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/pstyle.css">
 </head>
 <body>
     <div class="container">
         <header>
             <div class="logo">
-                <i class="fas fa-dice-d6" style="color: #ffd43b;"></i>
-                &nbsp; <p>Admin Profile</p>
-            </div>
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: rgb(255, 255, 255);">
+                  <i class="fas fa-dice-d6" style="color: #ffd43b; margin-right: 5px;"></i>
+                  <p style="margin: 5;">The One Lottery</p>
+                </a>
+              </div>
             <ul class="navbar">
+                 <ul class="navbar">
                <li><a href="admin.html" >Admin</a></li>
                 <li><a href="profile.html" class="active">Profile</a></li>
                 <li onclick="logout()" style="color: aliceblue; font-weight: bold;">Logout</li>
             </ul> 
+            </ul>
         </header>
-
-        <div class="content-wrapper">
-            <div class="content-desc">
-                <h1>ADMIN PROFILE</h1>
-                <p> Welcome to <span>the one lottery !</span> Join now to compete with
-                    our top players and win huge prizes.</p>
-                    <a href="ticket.html" class="active"><button id="btn2">Unleash your luck and win!</button></a>
-            </div>
-            <div class="rakuto"></div>
+        <div class="fcontainer">
+          <h1 class="form-title">Admin Profile</h1>
+           <div class="rcontainer">
+            <table id="TicketList">
+                <tr class="table-textT">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+                 <tr class="table-text">
+                    <th>Ugyen</th>
+                    <th>Dendup</th>
+                    <th>ugyen@gmail.com</th>
+                </tr>
+                <tr class="btn">
+                   <th><button class="button-1">Edit</button></th>
+                   <th> <button class="button-2">Delete</button></th>
+                </tr>
+            </table>
+        </div>
+        </div>
         </div>
     </div>
     <footer>
@@ -48,7 +64,7 @@
         <p>Copyright &copy; All Right Reserved</p>
     </div>
      <!-- <script src="js/auth.js"></script> -->
-     <script src="/js/ticket.js"></script>
+     <!-- <script src="/js/admin.js"></script> -->
     <script src="js/logout.js"></script>
     <script src="js/auth.js"></script>
 </body>

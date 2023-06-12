@@ -13,7 +13,6 @@ type Ticket struct {
 	Phone     int64  `json:"phone"`
 }
 
-
 const queryInsertUser = "INSERT INTO ticket(tikid, firstname, lastname, phone) VALUES($1, $2, $3, $4);"
 
 func (s *Ticket) Create() error {
