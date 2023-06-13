@@ -32,7 +32,7 @@ func TestAddTicket(t *testing.T) {
 
 func TestGetTicket(t *testing.T) {
 	c := http.Client{}
-	r, _ := c.Get("http://localhost:3005/ticket/1013")
+	r, _ := c.Get("http://localhost:3005/ticket/103")
 	body, _ := io.ReadAll(r.Body)
 	assert.Equal(t, http.StatusOK, r.StatusCode)
 	expResp := `{"tikid":345, "fname":"Tshering", "lname":"Yangchen", "phone":1764567}`
@@ -59,7 +59,7 @@ func TestDeleteTicket(t *testing.T) {
 func TestTicketNotFound(t *testing.T) {
 	assert := assert.New(t)
 	c := http.Client{}
-	r, _ := c.Get("http://localhost:3005/student/231")
+	r, _ := c.Get("http://localhost:3005/ticket/231")
 	body, _ := io.ReadAll(r.Body)
 	assert.Equal(http.StatusNotFound, r.StatusCode)
 	expResp := `{"error":"Ticket not found"}`
