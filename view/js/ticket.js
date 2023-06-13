@@ -67,8 +67,59 @@ function newRow(ticket) {
       td[4].innerHTML = '<input type="button" onclick="deleteTicket(this)"value="Delete" id="button-1">';
       td[5].innerHTML = '<input type="button" onclick="updateTicket(this)"value="Edit" id="button-2">';
     }
-    console.log(td[0])
+
+// var randomNumber = Math.floor(Math.random() * 4);
+// // console.log(randomNumber);
+// var tikidValue = td[0].innerHTML;
+// var valuesArray = tikidValue.split(" ");
+// var randomValue = valuesArray[randomNumber];
+// console.log(randomValue);
+
+let countDownDate = new Date("June 13, 2023 06:46:00").getTime();
+let container = document.querySelectorAll(".tcontainer");
+let lotteryNumbers = Array.from(document.querySelectorAll("#TicketList tr:not(.table-text) td:nth-child(1)")).map(td => td.innerHTML);
+
+let alertShown = false; // Declare alertShown variable outside the interval function
+
+let countdownInterval = setInterval(function () {
+  let now = new Date().getTime();
+  let distance = countDownDate - now;
+  let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  container[0].childNodes[1].innerHTML = days;
+  container[0].childNodes[3].innerHTML = 'days';
+  container[1].childNodes[1].innerHTML = hours;
+  container[1].childNodes[3].innerHTML = 'hours';
+  container[2].childNodes[1].innerHTML = minutes;
+  container[2].childNodes[3].innerHTML = 'minutes';
+  container[3].childNodes[1].innerHTML = seconds;
+  container[3].childNodes[3].innerHTML = 'seconds';
+
+  if (distance <= 0 && !alertShown) {
+    clearInterval(countdownInterval); // Stop the countdown
+
+    var confirmation = confirm("Result is Out, Click to See..Good Luck");
+    if (confirmation) {
+      var randomNumber = Math.floor(Math.random() * lotteryNumbers.length);
+      var randomValue = lotteryNumbers[randomNumber];
+      console.log(randomValue);
+
+      alert("Countdown has ended! Winner is Lottery Number: " + randomValue); // Display an alert
+    }
+
+    alertShown = true; // Set alertShown to true to prevent further display of the confirmation dialog
+  }
+}, 1000);
+
+
+
+
 }
+
+
 
 function showTicket(data) {
     const ticket = JSON.parse(data)
@@ -191,34 +242,34 @@ function update(tid) {
 // }, 1000);
 
 
-let countDownDate = new Date("June 13, 2023 04:50:00").getTime();
-let container = document.querySelectorAll(".tcontainer");
-let lotteryNumbers = Array.from(document.querySelectorAll("#TicketList tr:not(.table-text) td:nth-child(1)")).map(td => td.innerHTML);
+// let countDownDate = new Date("June 13, 2023 04:50:00").getTime();
+// let container = document.querySelectorAll(".tcontainer");
+// let lotteryNumbers = Array.from(document.querySelectorAll("#TicketList tr:not(.table-text) td:nth-child(1)")).map(td => td.innerHTML);
 
-let countdownInterval = setInterval(function () {
-    let now = new Date().getTime();
-    let distance = countDownDate - now;
-    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// let countdownInterval = setInterval(function () {
+//     let now = new Date().getTime();
+//     let distance = countDownDate - now;
+//     let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//     let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+//     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    container[0].childNodes[1].innerHTML = days;
-    container[0].childNodes[3].innerHTML = 'days';
-    container[1].childNodes[1].innerHTML = hours;
-    container[1].childNodes[3].innerHTML = 'hours';
-    container[2].childNodes[1].innerHTML = minutes;
-    container[2].childNodes[3].innerHTML = 'minutes';
-    container[3].childNodes[1].innerHTML = seconds;
-    container[3].childNodes[3].innerHTML = 'seconds';
+//     container[0].childNodes[1].innerHTML = days;
+//     container[0].childNodes[3].innerHTML = 'days';
+//     container[1].childNodes[1].innerHTML = hours;
+//     container[1].childNodes[3].innerHTML = 'hours';
+//     container[2].childNodes[1].innerHTML = minutes;
+//     container[2].childNodes[3].innerHTML = 'minutes';
+//     container[3].childNodes[1].innerHTML = seconds;
+//     container[3].childNodes[3].innerHTML = 'seconds';
 
-    if (distance <= 0) {
-        clearInterval(countdownInterval); // Stop the interval
-        let randomIndex = Math.floor(Math.random() * lotteryNumbers.length);
-        let win = lotteryNumbers[randomIndex];
-        alert("Countdown has ended! Winner is Lottery Number: " + win); // Display an alert
-    }
-}, 1000);
+//     if (distance <= 0) {
+//         clearInterval(countdownInterval); // Stop the interval
+//         let randomIndex = Math.floor(Math.random() * lotteryNumbers.length);
+//         let win = lotteryNumbers[randomIndex];
+//         alert("Countdown has ended! Winner is Lottery Number: " + win); // Display an alert
+//     }
+// }, 1000);
 
 // let countDownDate = new Date("June 13, 2023 05:43:00").getTime();
 // let container = document.querySelectorAll(".tcontainer");
